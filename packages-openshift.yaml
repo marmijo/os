@@ -27,11 +27,14 @@ conditional-include:
         - rhel-10.1-appstream
         #- rhel-10.1-early-kernel
         # XXX Not built for rhel 10 yet
-        #- rhel-10.1-fast-datapath
+        - rhel-10.1-fast-datapath
         #- rhel-10.1-server-ose-4.20
-        - rhel-9.6-fast-datapath
+        #- rhel-9.6-fast-datapath
         - rhel-9.6-server-ose-4.20
         - rhel-9.6-appstream-containernetworking
+      exclude-packages:
+        - cri-o
+        - openvswitch3.5
   - if: osversion == "centos-9"
     include:
       repos:
